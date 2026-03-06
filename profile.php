@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-// Check if the form was submitted
+
 if (isset($_POST['submit'])) {
 
-    // Retrieve form data
+
     $name = $_POST['name'];
     $age = $_POST['age'];
     $course = $_POST['course'];
@@ -13,14 +13,14 @@ if (isset($_POST['submit'])) {
     $hobbies = isset($_POST['hobbies']) ? $_POST['hobbies'] : [];
     $bio = $_POST['bio'];
 
-    // Handle hobbies display
+
     if (!empty($hobbies)) {
         $hobbiesDisplay = implode(", ", $hobbies);
     } else {
         $hobbiesDisplay = "None selected";
     }
 
-    // Handle file upload
+  
     $uploadDir = "uploads/";
     if (!is_dir($uploadDir)) {
         mkdir($uploadDir, 0777, true);
